@@ -8,13 +8,12 @@ const modalRoot = document.querySelector('#modal-root')
 export class Modal extends Component {
   static propTypes = {
     onLoad: PropTypes.func.isRequired,
-    onClick: PropTypes.func.isRequired,
-    image: PropTypes.objectOf(
-      PropTypes.shape({
+    onClick: PropTypes.func,
+    image: PropTypes.shape({
         link: PropTypes.string.isRequired,
       alt: PropTypes.string.isRequired,
       }).isRequired,
-    ),
+    
   }
   componentDidMount() {
     window.addEventListener('keydown', this.handleKeyDown);

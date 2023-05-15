@@ -3,7 +3,7 @@ import { Searchbar } from "./Searchbar/Searchbar";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Button } from "./Button/Button";
-import {Circles } from 'react-loader-spinner';
+import {FidgetSpinner } from 'react-loader-spinner';
 import { ImageGallery } from "./ImageGallery/ImageGallery";
 import { fetchPixabay } from "services/pixabay-api";
 import { Modal } from "./Modal/Modal";
@@ -117,18 +117,16 @@ export class App extends Component {
         ></ImageGallery>
 
         {status === 'pending' && (
-          <Circles
-            height="80"
-            width="80"
-            color="#4fa94d"
-            ariaLabel="circles-loading"
-            wrapperStyle={{
-              display: 'block',
-              margin: '0 auto ',
-            }}
-            wrapperClass=""
-            visible={true}
-          />
+          <FidgetSpinner
+  visible={true}
+  height="80"
+  width="80"
+  ariaLabel="dna-loading"
+  wrapperStyle={{}}
+  wrapperClass="dna-wrapper"
+  ballColors={['#ff0000', '#00ff00', '#0000ff']}
+  backgroundColor="#F4442E"
+/>
         )}
 
         {status === 'rejected' && (
